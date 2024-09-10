@@ -13,12 +13,12 @@ import io.cucumber.junit.CucumberOptions;
 		dryRun=!true,
 		stepNotifications=true,
 		monochrome=true,
+		publish = true,
 
 		plugin = {"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
 				"rerun:target/failedscenario.txt",
 				"html:target/html/Cucumber.html",
 				"json:target/json/Cucumber.json"}
-
 
 		)
 
