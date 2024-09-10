@@ -22,10 +22,16 @@ public class HomePage {
 	
 	By deleteAccountLink= By.xpath("//a[@href='/delete_account']");
 	
+	By logoutLink = By.xpath("//a[@href='/logout']");
+	
 	public void clickDeleteAcc() {
 		driver.findElement(deleteAccountLink).click();
 	}
 
+	public boolean verifyLogoutAccLink() {
+		 return driver.findElement(logoutLink).isDisplayed();
+
+	}
 
 	public WebElement getHomePageLogo() {
 		return driver.findElement(homePageLogo);
@@ -35,6 +41,11 @@ public class HomePage {
 		return driver.findElement(signUpHeader);
 
 	}
+	
+	public void clickLogoutLink() {
+		driver.findElement(logoutLink).click();
+	}
+	
 
 
 	public WebElement getHomePageLink() {

@@ -8,7 +8,7 @@ import io.cucumber.junit.CucumberOptions;
 @RunWith(Cucumber.class)
 
 @CucumberOptions(
-		features="src/test/resources/FeatureFiles/Registration.feature",
+		features="src/test/resources/FeatureFiles",
 		glue= {"stepDefinitions","hooks"},
 		dryRun=!true,
 		stepNotifications=true,

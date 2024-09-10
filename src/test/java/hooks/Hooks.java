@@ -20,25 +20,31 @@ public class Hooks {
 		if (DriverManager.getDriver() == null) {
 			DriverManager.launchBrowser();
 			DriverManager.getDriver().manage().window().maximize();
-			DriverManager.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+			launchApplication();
+			// DriverManager.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+			DriverManager.getDriver().manage().timeouts().pageLoadTimeout(Duration.ofSeconds(5));
 			CommonUtils.initWebElement();
 		}
 
 	}
+
 	@AfterStep
 	public static void takeScreenshot(Scenario scenario) {
 		String scenarioName = scenario.getName();
-		if(scenario.isFailed()) {
+		if (scenario.isFailed()) {
 			byte[] screenshot = ((TakesScreenshot) DriverManager.getDriver()).getScreenshotAs(OutputType.BYTES);
-			scenario.attach(screenshot, "image/png", "Failed Scenario" + scenarioName); 
-		}   
+			scenario.attach(screenshot, "image/png", "Failed Scenario" + scenarioName);
+		}
 
 	}
-	
+
+	public static void launchApplication() {
+
+		DriverManager.getDriver().get("https://automationexercise.com");
+	}
+
 	@AfterAll
 	public static void tearDown() {
 		DriverManager.getDriver().quit();
 	}
 }
-
-
