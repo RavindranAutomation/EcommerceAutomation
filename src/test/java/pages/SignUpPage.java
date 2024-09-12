@@ -36,7 +36,7 @@ public class SignUpPage {
 	By continueButton = By.xpath("//div[@class='pull-right']//a[1]");
 	By accountDeletedMessage = By.xpath("//h2[@data-qa='account-deleted']//b[1]");
 	By loginAsUser = By.xpath("//ul[@class='nav navbar-nav']/li[10]/a");
-
+    By emailExistsMessage = By.xpath("//div[@class='signup-form']//p[1]");
 
 	public void clickContinuebutton() {
 		driver.findElement(continueButton).click();
@@ -80,12 +80,13 @@ public class SignUpPage {
 
 	}
 
-	public void enterSignUpUsername() {
-		driver.findElement(signUpName).sendKeys("Ravindran");
+	public WebElement enterSignUpUsername() {
+		return driver.findElement(signUpName);
 
 	}
-	public void enterSignUpEmail() {
-		driver.findElement(signUpEmail).sendKeys("raviqa@yopmail.com");
+	public WebElement enterSignUpEmail() {
+		return driver.findElement(signUpEmail);
+		
 
 	}
 
@@ -105,6 +106,10 @@ public class SignUpPage {
 	public String getAccountDeletedMessage() {
 		String accDeletedMsg = driver.findElement(accountDeletedMessage).getText();
 		return accDeletedMsg;
+	}
+	public String getEmailExistsMessage() {
+		String emailMessage = driver.findElement(emailExistsMessage).getText();
+		return emailMessage;
 	}
 
 	public static SignUpPage getInstance() {

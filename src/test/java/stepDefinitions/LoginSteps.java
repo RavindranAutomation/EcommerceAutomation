@@ -1,9 +1,6 @@
 package stepDefinitions;
 
-import java.time.Duration;
-
 import org.junit.Assert;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 import driverManager.DriverManager;
 import io.cucumber.java.en.Given;

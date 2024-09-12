@@ -19,7 +19,7 @@ public class HomePage {
 	By signUpHeader = By.xpath("//a[@href='/login']");
 	By productsHeader = By.xpath("//a[@href='/products']");
 	By cartHeader = By.xpath("//a[@href='/view_cart']");
-	
+	By contactUsLink = By.xpath("//a[@href='/contact_us']");
 	By deleteAccountLink= By.xpath("//a[@href='/delete_account']");
 	
 	By logoutLink = By.xpath("//a[@href='/logout']");
@@ -50,6 +50,11 @@ public class HomePage {
 
 	public WebElement getHomePageLink() {
 		return driver.findElement(homePageLink);
+	}
+	
+	public void clickContactusLink() {
+		driver.findElement(contactUsLink).click();
+
 	}
 
 	public static HomePage getInstance() {

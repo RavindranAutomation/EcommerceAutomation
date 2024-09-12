@@ -8,7 +8,7 @@ import driverManager.DriverManager;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import junit.framework.Assert;
+import static org.junit.Assert.*;
 import pages.HomePage;
 import pages.SignUpPage;
 
@@ -25,10 +25,10 @@ public class RegistrationSteps {
 	public void the_home_page_should_be_visible_successfully() {
 		try {
 			boolean homeLogo = HomePage.getInstance().getHomePageLogo().isDisplayed();
-			Assert.assertEquals(true, homeLogo);
+			assertEquals(true, homeLogo);
 
 			boolean displayed2 = HomePage.getInstance().getHomePageLink().isDisplayed();
-			Assert.assertEquals(true, displayed2);
+			assertEquals(true, displayed2);
 		} catch (Exception e) {
 
 			e.printStackTrace();
@@ -42,13 +42,13 @@ public class RegistrationSteps {
 	@Then("they should see {string} on the page")
 	public void they_should_see_on_the_page(String signUpTitleExpected) {
 		String signUpTitleActual = SignUpPage.getInstance().getSignUpTitle();
-		Assert.assertEquals(signUpTitleExpected, signUpTitleActual);
+		assertEquals(signUpTitleExpected, signUpTitleActual);
 
 	}
 	@When("the user enters their name and email address")
 	public void the_user_enters_their_name_and_email_address() {
-		SignUpPage.getInstance().enterSignUpUsername();
-		SignUpPage.getInstance().enterSignUpEmail();	
+		SignUpPage.getInstance().enterSignUpUsername().sendKeys("Ravindran");
+		SignUpPage.getInstance().enterSignUpEmail().sendKeys("raviqa@yopmail.com");
 
 	}
 	@When("clicks the Signup button")
@@ -59,7 +59,7 @@ public class RegistrationSteps {
 	@Then("user should see {string} on the page")
 	public void user_should_see_on_the_page(String accountInformessageExpected) {
 		String accountInfoMessageActual = SignUpPage.getInstance().getAccountInfoTitle();
-		Assert.assertEquals(accountInformessageExpected, accountInfoMessageActual);
+		assertEquals(accountInformessageExpected, accountInfoMessageActual);
 	}
 	@When("the user fills required informations for registration")
 	public void the_user_fills_required_informations_for_registration() {
@@ -93,7 +93,7 @@ public class RegistrationSteps {
 	@Then("they should see ACCOUNT CREATED! on the page")
 	public void they_should_see_account_created_on_the_page() {
 		String accountCreatedMessage = SignUpPage.getInstance().getAccountCreatedMessage();
-		Assert.assertEquals(accountCreatedMessage, "ACCOUNT CREATED!");
+		assertEquals(accountCreatedMessage, "ACCOUNT CREATED!");
 	}
 	@When("the user clicks the Continue button")
 	public void the_user_clicks_the_continue_button() {
@@ -104,7 +104,7 @@ public class RegistrationSteps {
 	@Then("they should see Logged in as username")
 	public void they_should_see_logged_in_as_username() {
 		boolean loggedinAs = driver.findElement(By.xpath("//ul[@class='nav navbar-nav']/li[10]/a")).isDisplayed();
-		Assert.assertEquals(true, loggedinAs);
+		assertEquals(true, loggedinAs);
 	}
 
 	@When("the user clicks the Delete Account button")
@@ -115,14 +115,27 @@ public class RegistrationSteps {
 	@Then("they should see ACCOUNT DELETED! on the page")
 	public void they_should_see_account_deleted_on_the_page() {
 		String accountDeletedMessage = SignUpPage.getInstance().getAccountDeletedMessage();
-		Assert.assertEquals(accountDeletedMessage, "ACCOUNT DELETED!");
+		assertEquals(accountDeletedMessage, "ACCOUNT DELETED!");
 
 	}
 	@Then("they click the Continue button")
 	public void they_click_the_continue_button() {
 		SignUpPage.getInstance().clickContinuebutton();
 		boolean homeLogo1 = HomePage.getInstance().getHomePageLogo().isDisplayed();
-		Assert.assertEquals(true, homeLogo1);
+		assertEquals(true, homeLogo1);
 	}
+	@SuppressWarnings("deprecation")
+	@Then("they should see the error message {string}")
+	public void they_should_see_the_error_message(String emailExistsMessageExpected) {
+	   String emailExistsMessageActual = SignUpPage.getInstance().getEmailExistsMessage();
+	   System.out.println(emailExistsMessageActual);
+	  assertEquals(emailExistsMessageExpected, emailExistsMessageActual);
+	}
+	@When("the user enters their name and email address {string} and {string}")
+	public void the_user_enters_their_name_and_email_address_and(String Username, String Password) {
+	    SignUpPage.getInstance().enterSignUpUsername().sendKeys(Username);
+	    SignUpPage.getInstance().enterSignUpEmail().sendKeys(Password);
+	}
+
 
 }

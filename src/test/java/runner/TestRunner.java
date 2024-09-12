@@ -10,6 +10,7 @@ import io.cucumber.junit.CucumberOptions;
 @CucumberOptions(
 		features="src/test/resources/FeatureFiles",
 		glue= {"stepDefinitions","hooks"},
+//		tags = "@ExistingUserRegistration",
 		dryRun=!true,
 		stepNotifications=true,
 		monochrome=true,

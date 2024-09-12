@@ -5,6 +5,7 @@ import java.time.Duration;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 
+import constants.Cons;
 import driverManager.DriverManager;
 import io.cucumber.java.AfterAll;
 import io.cucumber.java.AfterStep;
@@ -40,7 +41,7 @@ public class Hooks {
 
 	public static void launchApplication() {
 
-		DriverManager.getDriver().get("https://automationexercise.com");
+		DriverManager.getDriver().get(Cons.Url);
 	}
 
 	@AfterAll
