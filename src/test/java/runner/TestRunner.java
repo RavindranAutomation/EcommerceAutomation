@@ -8,21 +8,21 @@ import io.cucumber.junit.CucumberOptions;
 @RunWith(Cucumber.class)
 
 @CucumberOptions(
-		features="src/test/resources/FeatureFiles",
+		features="src/test/resources/featureFiles/Cart.feature",
 		glue= {"stepDefinitions","hooks"},
-//		tags = "@ExistingUserRegistration",
 		dryRun=!true,
-		stepNotifications=true,
+//		tags = "~@NewUserRegistration",
 		monochrome=true,
+		stepNotifications = true,
 		publish = true,
 
 		plugin = {"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
 				"rerun:target/failedscenario.txt",
 				"html:target/html/Cucumber.html",
 				"json:target/json/Cucumber.json"}
-
 		)
 
 public class TestRunner {
+	
 
 }

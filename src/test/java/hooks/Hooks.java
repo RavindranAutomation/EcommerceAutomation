@@ -20,10 +20,9 @@ public class Hooks {
 		CommonUtils.loadProperties();
 		if (DriverManager.getDriver() == null) {
 			DriverManager.launchBrowser();
-			DriverManager.getDriver().manage().window().maximize();
 			launchApplication();
-			// DriverManager.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-			DriverManager.getDriver().manage().timeouts().pageLoadTimeout(Duration.ofSeconds(5));
+			DriverManager.getDriver().manage().window().maximize();
+			DriverManager.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 			CommonUtils.initWebElement();
 		}
 
@@ -42,6 +41,7 @@ public class Hooks {
 	public static void launchApplication() {
 
 		DriverManager.getDriver().get(Cons.Url);
+
 	}
 
 	@AfterAll

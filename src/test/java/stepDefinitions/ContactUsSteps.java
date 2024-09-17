@@ -1,12 +1,8 @@
 package stepDefinitions;
 
-import io.cucumber.datatable.DataTable;
-import io.cucumber.java.en.Then;
-import io.cucumber.java.en.When;
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 import java.time.Duration;
-import java.util.List;
 import java.util.Map;
 
 import org.openqa.selenium.Alert;
@@ -15,6 +11,9 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import driverManager.DriverManager;
+import io.cucumber.datatable.DataTable;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 import pages.ContactUsPage;
 import pages.HomePage;
 import utils.CommonUtils;

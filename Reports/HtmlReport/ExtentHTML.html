@@ -39,7 +39,6 @@
 		<!-- slideout menu -->
 		<ul id='slide-out' class='side-nav fixed hide-on-med-and-down'>
 			<li class='waves-effect active'><a href='#!' view='test-view' onclick="configureView(0);chartsView('test');"><i class='material-icons'>dashboard</i></a></li>
-			<li class='waves-effect'><a href='#!' view='category-view' onclick="configureView(1)"><i class='material-icons'>label_outline</i></a></li>
 			<li class='waves-effect'><a href='#!' onclick="configureView(-1);chartsView('dashboard');" view='dashboard-view'><i class='material-icons'>track_changes</i></a></li>
 		</ul>
 		<!-- report name -->
@@ -49,7 +48,7 @@
 		<!-- nav-right -->
 		<ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
 			<a href='#!'>
-			<span class='label blue darken-3 suite-start-time'>Sep 12, 2024 03:03:24 pm</span>
+			<span class='label blue darken-3 suite-start-time'>Sep 17, 2024 01:30:02 pm</span>
 			</a>
 		</ul>
 	</div>
@@ -71,17 +70,6 @@
 			</div>
 			<!-- test toggle -->
 			<!-- category toggle -->
-			<div class='chip transparent'>
-				<a class='dropdown-button category-toggle' data-activates='category-toggle' data-constrainwidth='false' data-beloworigin='true' data-hover='true' href='#'>
-				<i class='material-icons'>local_offer</i> Category
-				</a>
-				<ul id='category-toggle' class='dropdown-content'>
-					<li><a href='#'>@NewUserRegistration</a></li>
-					<li><a href='#'>@ExistingUserRegistration</a></li>
-					<li class='divider'></li>
-					<li class='clear'><a href='#!' clear='true'>Clear Filters</a></li>
-				</ul>
-			</div>
 			<!-- category toggle -->
 			<!-- clear filters -->
 			<div class='chip transparent hide'>
@@ -120,7 +108,7 @@
                 </div>
                 <div class='block text-small'>
                     <span class='tooltipped' data-position='top' data-tooltip='$100%'>
-                    <span class='strong'>3</span> features passed</span>
+                    <span class='strong'>1</span> features passed</span>
                 </div>
                 <div class='block text-small'>
                     <span class='strong tooltipped' data-position='top' data-tooltip='0%'>
@@ -138,7 +126,7 @@
                 </div>
                 <div class='block text-small'>
                     <span class='tooltipped' data-position='top' data-tooltip='100%'>
-                    <span class='strong'>5</span> scenarios passed</span>
+                    <span class='strong'>1</span> scenarios passed</span>
                 </div>
                 <div class='block text-small'>
                     <span class='strong tooltipped' data-position='top' data-tooltip='0%'>
@@ -158,7 +146,7 @@
                 </div>
                 <div class='block text-small'>
                     <span class='tooltipped' data-position='top' data-tooltip='100%'>
-                    <span class='strong'>41</span> steps passed</span>
+                    <span class='strong'>12</span> steps passed</span>
                 </div>
                 <div class='block text-small'>
                     <span class='strong tooltipped' data-position='top' data-tooltip='0%'>
@@ -187,8 +175,8 @@
 			<ul id='test-collection' class='test-collection'>
 				<li class='test displayed active has-leaf pass' status='pass' bdd='true' test-id='1'>
 					<div class='test-heading'>
-						<span class='test-name'>Contact US</span>
-						<span class='test-time'>Sep 12, 2024 03:03:25 pm</span>
+						<span class='test-name'>Cart Functionality</span>
+						<span class='test-time'>Sep 17, 2024 01:30:03 pm</span>
 						<span class='test-status right pass'>Pass</span>
 					</div>
 					<div class='test-content hide'>
@@ -201,303 +189,71 @@
 
 <div class='scenario node' test-id='2' status='pass'>
 
-	<span class='duration right label'>00 00 20.576</span>
+	<span class='duration right label'>00 00 17.979</span>
 	<div class="bdd-test">
-		<div class="scenario-name"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span> Scenario: Contact us form submission</div>
+		<div class="scenario-name"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span> Scenario: Verify the cart functionality</div>
 	</div>
 	
 	
 	
 	<ul class='steps'>
 		<li test-id='4' class='node given Pass' status='Pass'>
-			<div class="step-name" title="(stepDefinitions.LoginSteps.user_launches_the_application())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Given User launches the application</div>
+			<div class="step-name" title="(stepDefinitions.ProductSteps.the_user_launches_the_browser_and_navigate_to_the_url())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Given the user launches the browser and navigate to the URL</div>
 
 
 		</li>
 		<li test-id='6' class='node and Pass' status='Pass'>
+			<div class="step-name" title="(stepDefinitions.LoginSteps.user_clicks_on_the_signup_header_link())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User clicks on the signup header link</div>
+
+
+		</li>
+		<li test-id='8' class='node and Pass' status='Pass'>
 			<div class="step-name" title="(stepDefinitions.LoginSteps.the_user_enters_the_valid_credentials_and(java.lang.String,java.lang.String))"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And the user enters the valid credentials "raviqa123@yopmail.com" and "Test@12345"</div>
 
 
 		</li>
-		<li test-id='8' class='node when Pass' status='Pass'>
+		<li test-id='10' class='node when Pass' status='Pass'>
 			<div class="step-name" title="(stepDefinitions.LoginSteps.the_user_clicks_on_the_login_button())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>When the user clicks on the login button</div>
-
-
-		</li>
-		<li test-id='10' class='node then Pass' status='Pass'>
-			<div class="step-name" title="(stepDefinitions.LoginSteps.the_user_should_able_to_see_the_logout_account_link_())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then the user should able to see the logout account link</div>
 
 
 		</li>
 		<li test-id='12' class='node when Pass' status='Pass'>
-			<div class="step-name" title="(stepDefinitions.ContactUsSteps.the_user_clicks_on_the_contact_us_link())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>When the user clicks on the Contact Us link</div>
+			<div class="step-name" title="(stepDefinitions.ProductSteps.the_user_clicks_on_the_Products_button())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>When the user clicks on the Products button</div>
 
 
 		</li>
 		<li test-id='14' class='node then Pass' status='Pass'>
-			<div class="step-name" title="(stepDefinitions.ContactUsSteps.the_user_should_be_rediected_to_contact_us_page())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then the user should be rediected to contact us page</div>
+			<div class="step-name" title="(stepDefinitions.ProductSteps.they_should_be_navigated_to_the_all_products_page_successfully())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then they should be navigated to the ALL PRODUCTS page successfully</div>
 
 
 		</li>
 		<li test-id='16' class='node and Pass' status='Pass'>
-			<div class="step-name" title="(stepDefinitions.ContactUsSteps.the_verifies_the_feedback_mail_id())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And the verifies the feedback mail id</div>
+			<div class="step-name" title="(stepDefinitions.CartSteps.the_user_adds_the_blue_top_to_cart())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And the user adds the Blue top to cart</div>
 
 
 		</li>
-		<li test-id='18' class='node and Pass' status='Pass'>
-			<div class="step-name" title="(stepDefinitions.ContactUsSteps.user_enters_the_below_details(io.cucumber.datatable.DataTable))"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User enters the below details</div>
-
-
-					<div class="node-step"><table class='markup-table table '><tr><td>Name</td><td>Ravindran</td></tr><tr><td>Email</td><td>raviqa123@yopmail.com</td></tr><tr><td>Subject</td><td>Return Order</td></tr><tr><td>Message</td><td>Kindly create a return order for the attached product</td></tr></table></div>
-		</li>
-		<li test-id='20' class='node and Pass' status='Pass'>
-			<div class="step-name" title="(stepDefinitions.ContactUsSteps.the_user_attaching_the_product_image())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And the user attaching the product image</div>
+		<li test-id='18' class='node when Pass' status='Pass'>
+			<div class="step-name" title="(stepDefinitions.CartSteps.user_clicks_on_cart_header_link())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>When user clicks on Cart header link</div>
 
 
 		</li>
-		<li test-id='22' class='node and Pass' status='Pass'>
-			<div class="step-name" title="(stepDefinitions.ContactUsSteps.the_user_clicks_on_the_submit_button())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And the user clicks on the submit button</div>
+		<li test-id='20' class='node then Pass' status='Pass'>
+			<div class="step-name" title="(stepDefinitions.CartSteps.shopping_cart_page_should_be_displayed())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then Shopping cart page should be displayed</div>
 
 
 		</li>
-		<li test-id='24' class='node then Pass' status='Pass'>
-			<div class="step-name" title="(stepDefinitions.ContactUsSteps.the_user_should_able_to_see_the_details_submitted_message())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then the user should able to see the details submitted message</div>
+		<li test-id='22' class='node when Pass' status='Pass'>
+			<div class="step-name" title="(stepDefinitions.CartSteps.user_click_on_the_proceed_to_checkout_button())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>When user click on the Proceed to checkout button</div>
 
 
 		</li>
-	</ul>
-</div>
-					</div>
-				</li>
-				<li class='test displayed active has-leaf pass' status='pass' bdd='true' test-id='26'>
-					<div class='test-heading'>
-						<span class='test-name'>Login Feature</span>
-						<span class='test-time'>Sep 12, 2024 03:03:46 pm</span>
-						<span class='test-status right pass'>Pass</span>
-					</div>
-					<div class='test-content hide'>
-<div class="sr-filters bdd-filters">
-	<a class="btn-floating waves-effect waves-light pass green" title="pass"><i class='material-icons'>check_circle</i></a>
-	<a class="btn-floating waves-effect waves-light fail red" title="fail"><i class='material-icons'>cancel</i></a>
-	<a class="btn-floating waves-effect waves-light skip blue" title="skip"><i class='material-icons'>redo</i></a>
-	<a class="btn-floating waves-effect waves-light clear grey" title="clear"><i class='material-icons'>clear</i></a>
-</div>
-
-<div class='scenario node' test-id='27' status='pass'>
-
-	<span class='duration right label'>00 00 07.874</span>
-	<div class="bdd-test">
-		<div class="scenario-name"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span> Scenario: Verify the login functionality with valid credentials</div>
-	</div>
-	
-	
-	
-	<ul class='steps'>
-		<li test-id='29' class='node given Pass' status='Pass'>
-			<div class="step-name" title="(stepDefinitions.LoginSteps.user_launches_the_application())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Given User launches the application</div>
+		<li test-id='24' class='node and Pass' status='Pass'>
+			<div class="step-name" title="(stepDefinitions.CartSteps.checkout_page_should_be_dispalyed())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And checkout page should be dispalyed</div>
 
 
 		</li>
-		<li test-id='31' class='node and Pass' status='Pass'>
-			<div class="step-name" title="(stepDefinitions.LoginSteps.the_user_enters_the_valid_credentials_and(java.lang.String,java.lang.String))"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And the user enters the valid credentials "raviqa123@yopmail.com" and "Test@12345"</div>
-
-
-		</li>
-		<li test-id='33' class='node when Pass' status='Pass'>
-			<div class="step-name" title="(stepDefinitions.LoginSteps.the_user_clicks_on_the_login_button())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>When the user clicks on the login button</div>
-
-
-		</li>
-		<li test-id='35' class='node then Pass' status='Pass'>
-			<div class="step-name" title="(stepDefinitions.LoginSteps.the_user_should_able_to_see_the_logout_account_link_())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then the user should able to see the logout account link</div>
-
-
-		</li>
-	</ul>
-</div>
-<div class='scenario node' test-id='37' status='pass'>
-
-	<span class='duration right label'>00 00 02.180</span>
-	<div class="bdd-test">
-		<div class="scenario-name"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span> Scenario: Verify the login functionality with invalid credentials</div>
-	</div>
-	
-	
-	
-	<ul class='steps'>
-		<li test-id='39' class='node given Pass' status='Pass'>
-			<div class="step-name" title="(stepDefinitions.LoginSteps.user_launches_the_application())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Given User launches the application</div>
-
-
-		</li>
-		<li test-id='41' class='node and Pass' status='Pass'>
-			<div class="step-name" title="(stepDefinitions.LoginSteps.the_user_enters_the_invalid_credentials_and(java.lang.String,java.lang.String))"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And the user enters the invalid credentials "raviqa123@hotmail.com" and "@Test2w"</div>
-
-
-		</li>
-		<li test-id='43' class='node when Pass' status='Pass'>
-			<div class="step-name" title="(stepDefinitions.LoginSteps.the_user_clicks_on_the_login_button())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>When the user clicks on the login button</div>
-
-
-		</li>
-		<li test-id='45' class='node then Pass' status='Pass'>
-			<div class="step-name" title="(stepDefinitions.LoginSteps.the_user_should_able_to_see_invalid_login_error_message())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then the user should able to see invalid login error message</div>
-
-
-		</li>
-	</ul>
-</div>
-					</div>
-				</li>
-				<li class='test displayed active has-leaf pass' status='pass' bdd='true' test-id='47'>
-					<div class='test-heading'>
-						<span class='test-name'>User Signup and Account Management</span>
-						<span class='test-time'>Sep 12, 2024 03:03:56 pm</span>
-						<span class='test-status right pass'>Pass</span>
-					</div>
-					<div class='test-content hide'>
-<div class="sr-filters bdd-filters">
-	<a class="btn-floating waves-effect waves-light pass green" title="pass"><i class='material-icons'>check_circle</i></a>
-	<a class="btn-floating waves-effect waves-light fail red" title="fail"><i class='material-icons'>cancel</i></a>
-	<a class="btn-floating waves-effect waves-light skip blue" title="skip"><i class='material-icons'>redo</i></a>
-	<a class="btn-floating waves-effect waves-light clear grey" title="clear"><i class='material-icons'>clear</i></a>
-</div>
-
-<div class='scenario node' test-id='48' status='pass'>
-
-	<span class='duration right label'>00 00 18.540</span>
-	<div class="bdd-test">
-		<div class="scenario-name"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span> Scenario: New User Signup</div>
-	</div>
-	
-	
-		<div class='category-list'>
-				<span class='category label'>@NewUserRegistration</span>
-		</div>
-	
-	<ul class='steps'>
-		<li test-id='50' class='node given Pass' status='Pass'>
-			<div class="step-name" title="(stepDefinitions.RegistrationSteps.the_user_launches_the_browser_and_navigate_to_the_url())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Given the user launches the browser and navigate to the URL</div>
-
-
-		</li>
-		<li test-id='52' class='node then Pass' status='Pass'>
-			<div class="step-name" title="(stepDefinitions.RegistrationSteps.the_home_page_should_be_visible_successfully())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then the home page should be visible successfully</div>
-
-
-		</li>
-		<li test-id='54' class='node when Pass' status='Pass'>
-			<div class="step-name" title="(stepDefinitions.RegistrationSteps.the_user_clicks_on_the_signup_login_button())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>When the user clicks on the Signup/Login button</div>
-
-
-		</li>
-		<li test-id='56' class='node then Pass' status='Pass'>
-			<div class="step-name" title="(stepDefinitions.RegistrationSteps.they_should_see_on_the_page(java.lang.String))"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then they should see 'New User Signup!' on the page</div>
-
-
-		</li>
-		<li test-id='58' class='node when Pass' status='Pass'>
-			<div class="step-name" title="(stepDefinitions.RegistrationSteps.the_user_enters_their_name_and_email_address())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>When the user enters their name and email address</div>
-
-
-		</li>
-		<li test-id='60' class='node and Pass' status='Pass'>
-			<div class="step-name" title="(stepDefinitions.RegistrationSteps.clicks_the_signup_button())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And clicks the Signup button</div>
-
-
-		</li>
-		<li test-id='62' class='node then Pass' status='Pass'>
-			<div class="step-name" title="(stepDefinitions.RegistrationSteps.user_should_see_on_the_page(java.lang.String))"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then user should see 'ENTER ACCOUNT INFORMATION' on the page</div>
-
-
-		</li>
-		<li test-id='64' class='node when Pass' status='Pass'>
-			<div class="step-name" title="(stepDefinitions.RegistrationSteps.the_user_fills_required_informations_for_registration())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>When the user fills required informations for registration</div>
-
-
-		</li>
-		<li test-id='66' class='node and Pass' status='Pass'>
-			<div class="step-name" title="(stepDefinitions.RegistrationSteps.clicks_the_create_account_button())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And clicks the Create Account button</div>
-
-
-		</li>
-		<li test-id='68' class='node then Pass' status='Pass'>
-			<div class="step-name" title="(stepDefinitions.RegistrationSteps.they_should_see_account_created_on_the_page())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then they should see ACCOUNT CREATED! on the page</div>
-
-
-		</li>
-		<li test-id='70' class='node when Pass' status='Pass'>
-			<div class="step-name" title="(stepDefinitions.RegistrationSteps.the_user_clicks_the_continue_button())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>When the user clicks the Continue button</div>
-
-
-		</li>
-		<li test-id='72' class='node then Pass' status='Pass'>
-			<div class="step-name" title="(stepDefinitions.RegistrationSteps.they_should_see_logged_in_as_username())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then they should see Logged in as username</div>
-
-
-		</li>
-		<li test-id='74' class='node when Pass' status='Pass'>
-			<div class="step-name" title="(stepDefinitions.RegistrationSteps.the_user_clicks_the_delete_account_button())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>When the user clicks the Delete Account button</div>
-
-
-		</li>
-		<li test-id='76' class='node then Pass' status='Pass'>
-			<div class="step-name" title="(stepDefinitions.RegistrationSteps.they_should_see_account_deleted_on_the_page())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then they should see ACCOUNT DELETED! on the page</div>
-
-
-		</li>
-		<li test-id='78' class='node and Pass' status='Pass'>
-			<div class="step-name" title="(stepDefinitions.RegistrationSteps.they_click_the_continue_button())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And they click the Continue button</div>
-
-
-		</li>
-	</ul>
-</div>
-<div class='scenario node' test-id='80' status='pass'>
-
-	<span class='duration right label'>00 00 04.036</span>
-	<div class="bdd-test">
-		<div class="scenario-name"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span> Scenario: Register user with existing credentials</div>
-	</div>
-	
-	
-		<div class='category-list'>
-				<span class='category label'>@ExistingUserRegistration</span>
-		</div>
-	
-	<ul class='steps'>
-		<li test-id='82' class='node given Pass' status='Pass'>
-			<div class="step-name" title="(stepDefinitions.RegistrationSteps.the_user_launches_the_browser_and_navigate_to_the_url())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Given the user launches the browser and navigate to the URL</div>
-
-
-		</li>
-		<li test-id='84' class='node then Pass' status='Pass'>
-			<div class="step-name" title="(stepDefinitions.RegistrationSteps.the_home_page_should_be_visible_successfully())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then the home page should be visible successfully</div>
-
-
-		</li>
-		<li test-id='86' class='node when Pass' status='Pass'>
-			<div class="step-name" title="(stepDefinitions.RegistrationSteps.the_user_clicks_on_the_signup_login_button())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>When the user clicks on the Signup/Login button</div>
-
-
-		</li>
-		<li test-id='88' class='node then Pass' status='Pass'>
-			<div class="step-name" title="(stepDefinitions.RegistrationSteps.they_should_see_on_the_page(java.lang.String))"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then they should see 'New User Signup!' on the page</div>
-
-
-		</li>
-		<li test-id='90' class='node when Pass' status='Pass'>
-			<div class="step-name" title="(stepDefinitions.RegistrationSteps.the_user_enters_their_name_and_email_address_and(java.lang.String,java.lang.String))"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>When the user enters their name and email address "Ravi" and "raviqa123@yopmail.com"</div>
-
-
-		</li>
-		<li test-id='92' class='node and Pass' status='Pass'>
-			<div class="step-name" title="(stepDefinitions.RegistrationSteps.clicks_the_signup_button())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And clicks the Signup button</div>
-
-
-		</li>
-		<li test-id='94' class='node then Pass' status='Pass'>
-			<div class="step-name" title="(stepDefinitions.RegistrationSteps.they_should_see_the_error_message(java.lang.String))"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then they should see the error message "Email Address already exist!"</div>
+		<li test-id='26' class='node and Pass' status='Pass'>
+			<div class="step-name" title="(stepDefinitions.CartSteps.user_verfifies_the_cart_items_and_total_amount(java.lang.String))"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And user verfifies the cart items and total amount "Rs. 1000"</div>
 
 
 		</li>
@@ -527,100 +283,7 @@
 	</div>
 	<!-- subview right -->
 </div>
-<!-- test view --><div id='category-view' class='view hide'>
-	<section id='controls'>
-		<div class='controls grey lighten-4'>
-			<!-- search -->
-			<div class='chip transparent' alt='Search Tests' title='Search Tests'>
-				<a href="#" class='search-div'>
-				<i class='material-icons'>search</i> Search
-				</a>
-				<div class='input-field left hide'>
-					<input id='search-tests' type='text' class='validate browser-default' placeholder='Search Tests...'>
-				</div>
-			</div>
-			<!-- search -->
-		</div>
-	</section>
-	<div class='subview-left left'>
-		<div class='view-summary'>
-			<ul id='category-collection' class='category-collection'>
-				<li class='category displayed active'>
-					<div class='category-heading'>
-						<span class='category-name'>@NewUserRegistration</span>
-						<span class='category-status right'>
-						<span class='label pass'>1</span>
-						</span>
-					</div>
-					<div class='category-content hide'>
-						<div class='category-status-counts'>
-							<span status="pass" class='label green accent-4 white-text'>Passed: 1</span>
-							
-							
-						</div>
-						<div class='category-tests'>
-							<table class='bordered table-results'>
-								<thead>
-									<tr>
-										<th>Timestamp</th>
-										<th>TestName</th>
-										<th>Status</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td>Sep 12, 2024 03:03:56 pm</td>
-										<td class='linked' test-id='48'>New User Signup</td>
-										<td><span class='test-status Pass'>Pass</span></td>
-									</tr>
-								</tbody>
-							</table>
-						</div>
-					</div>
-				</li>
-				<li class='category displayed active'>
-					<div class='category-heading'>
-						<span class='category-name'>@ExistingUserRegistration</span>
-						<span class='category-status right'>
-						<span class='label pass'>1</span>
-						</span>
-					</div>
-					<div class='category-content hide'>
-						<div class='category-status-counts'>
-							<span status="pass" class='label green accent-4 white-text'>Passed: 1</span>
-							
-							
-						</div>
-						<div class='category-tests'>
-							<table class='bordered table-results'>
-								<thead>
-									<tr>
-										<th>Timestamp</th>
-										<th>TestName</th>
-										<th>Status</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td>Sep 12, 2024 03:04:14 pm</td>
-										<td class='linked' test-id='80'>Register user with existing credentials</td>
-										<td><span class='test-status Pass'>Pass</span></td>
-									</tr>
-								</tbody>
-							</table>
-						</div>
-					</div>
-				</li>
-			</ul>
-		</div>
-	</div>
-	<div class='subview-right left'>
-		<div class='view-summary'>
-			<h5 class='category-name'></h5>
-		</div>
-	</div>
-</div>
-<!-- category view --><div id='dashboard-view' class='view hide'>
+<!-- test view --><div id='dashboard-view' class='view hide'>
 	<div class='card-panel transparent np-v'>
 		<h5>Dashboard</h5>
 
@@ -628,70 +291,37 @@
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Features
-					<div class='panel-lead'>3</div>
+					<div class='panel-lead'>1</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Scenarios
-					<div class='panel-lead'>5</div>
+					<div class='panel-lead'>1</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Steps
-					<div class='panel-lead'>41</div>
+					<div class='panel-lead'>12</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Start
-					<div class='panel-lead'>Sep 12, 2024 03:03:24 pm</div>
+					<div class='panel-lead'>Sep 17, 2024 01:30:02 pm</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 			 		End
-			 		<div class='panel-lead'>Sep 12, 2024 03:04:19 pm</div>
+			 		<div class='panel-lead'>Sep 17, 2024 01:30:21 pm</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Time Taken
-					<div class='panel-lead'>00 00 54.996</div>
-				</div>
-			</div>
-			<div class='col s6'>
-				<div class='card-panel dashboard-categories'>
-					<span class='right label cyan white-text'>Categories</span><p>&nbsp;</p>
-					
-					<table>
-						<tr>
-							<th>Name</th>
-							<th>Passed</th>
-							<th>Failed</th>
-							<th>Skipped</th>
-							<th>Passed %</th>
-						</tr>
-						<tr>
-							<td>@NewUserRegistration</td>
-							<td>1</td>
-							<td>0</td>
-							<td>0</td>
-							<td>
-									100%
-							</td>
-						</tr>
-						<tr>
-							<td>@ExistingUserRegistration</td>
-							<td>1</td>
-							<td>0</td>
-							<td>0</td>
-							<td>
-									100%
-							</td>
-						</tr>
-					</table>
+					<div class='panel-lead'>00 00 19.289</div>
 				</div>
 			</div>
 		</div>
@@ -702,23 +332,23 @@
 		<!-- container -->
 		<script>
 			var statusGroup = {
-                parentCount: 3,
-				passParent: 3,
+                parentCount: 1,
+				passParent: 1,
 				failParent: 0,
 				fatalParent: 0,
 				errorParent: 0,
 				warningParent: 0,
 				skipParent: 0,
-				childCount: 5,
-				passChild: 5,
+				childCount: 1,
+				passChild: 1,
 				failChild: 0,
 				fatalChild: 0,
 				errorChild: 0,
 				warningChild: 0,
 				skipChild: 0,
 				infoChild: 0,
-				grandChildCount: 41,
-				passGrandChild: 41,
+				grandChildCount: 12,
+				passGrandChild: 12,
 				failGrandChild: 0,
 				fatalGrandChild: 0,
 				errorGrandChild: 0,
@@ -730,7 +360,7 @@
 		
 		<script>
 			var timeline = {
-			        "Contact US":20.58,"Login Feature":10.079,"User Signup and Account Management":22.594
+			        "Cart Functionality":17.984
 			};
 		</script>
 		

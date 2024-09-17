@@ -13,8 +13,12 @@ import org.openqa.selenium.support.PageFactory;
 
 import constants.Cons;
 import driverManager.DriverManager;
+import pages.CartPage;
+import pages.ContactUsPage;
 import pages.HomePage;
+import pages.ProductsPage;
 import pages.SignUpPage;
+import pages.TestCasesPage;
 
 public class CommonUtils {
 
@@ -42,7 +46,10 @@ public class CommonUtils {
 	public static void initWebElement() {
 		PageFactory.initElements(DriverManager.getDriver(), HomePage.getInstance());
 		PageFactory.initElements(DriverManager.getDriver(), SignUpPage.getInstance());
-		
+		PageFactory.initElements(DriverManager.getDriver(), CartPage.getInstance());
+		PageFactory.initElements(DriverManager.getDriver(), ProductsPage.getInstance());
+		PageFactory.initElements(DriverManager.getDriver(), TestCasesPage.getInstance());
+		PageFactory.initElements(DriverManager.getDriver(), ContactUsPage.getInstance());
 
 	}
 	

@@ -3,6 +3,7 @@ package stepDefinitions;
 import org.junit.Assert;
 
 import driverManager.DriverManager;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -14,21 +15,26 @@ public class LoginSteps {
 	public void user_launches_the_application() {
 		String currentUrl = DriverManager.getDriver().getCurrentUrl();
 		System.out.println(currentUrl);
-		
+
 	}
 
 	@Given("the user enters the valid credentials {string} and {string}")
 	public void the_user_enters_the_valid_credentials_and(String email, String password) {
-		HomePage.getInstance().getSignUpHeader().click();
+		
 		SignUpPage.getInstance().enterLoginEmail().sendKeys(email);
 		SignUpPage.getInstance().enterPassword().sendKeys(password);
 
 	}
+	@And("User clicks on the signup header link")
+	public void user_clicks_on_the_signup_header_link() {
+		HomePage.getInstance().getSignUpHeader().click();
+	}
+
 
 	@When("the user clicks on the login button")
 	public void the_user_clicks_on_the_login_button() {
 		SignUpPage.getInstance().clickLoginButton();
-		
+
 	}
 
 	@Then("the user should able to see the logout account link")
@@ -36,11 +42,13 @@ public class LoginSteps {
 		boolean verifyDeleteAccLink = HomePage.getInstance().verifyLogoutAccLink();
 		Assert.assertEquals(true, verifyDeleteAccLink);
 		HomePage.getInstance().clickLogoutLink();
+	
 
 	}
 
 	@Given("the user enters the invalid credentials {string} and {string}")
 	public void the_user_enters_the_invalid_credentials_and(String email, String password) {
+         
 		SignUpPage.getInstance().enterLoginEmail().sendKeys(email);
 		SignUpPage.getInstance().enterPassword().sendKeys(password);
 	}
@@ -48,9 +56,8 @@ public class LoginSteps {
 	@Then("the user should able to see invalid login error message")
 	public void the_user_should_able_to_see_invalid_login_error_message() {
 		String loginErrorMessage = SignUpPage.getInstance().getLoginErrorMessage();
-
 		Assert.assertEquals("Your email or password is incorrect!", loginErrorMessage);
-		
+
 	}
 
 }

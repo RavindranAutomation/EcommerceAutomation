@@ -1,7 +1,9 @@
-Feature: Contact US
+Feature: Header links feature
 
+  @ContactUsForm
   Scenario: Contact us form submission
-    Given User launches the application
+    Given the user launches the browser and navigate to the URL
+    And User clicks on the signup header link
     And the user enters the valid credentials "raviqa123@yopmail.com" and "Test@12345"
     When the user clicks on the login button
     Then the user should able to see the logout account link
@@ -16,3 +18,12 @@ Feature: Contact US
     And the user attaching the product image
     And the user clicks on the submit button
     Then the user should able to see the details submitted message
+
+  #@TestCasesList
+  #Scenario: Navigate to Test Cases Page
+    #Given the user launches the browser and navigate to the URL
+    #And User clicks on the signup header link
+    #And the user enters the valid credentials "raviqa123@yopmail.com" and "Test@12345"
+    #When the user clicks on the login button
+    #When the user clicks on the Test Cases button
+    #Then they should be navigated to the test cases page successfully
