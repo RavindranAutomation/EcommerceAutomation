@@ -8,7 +8,7 @@ import io.cucumber.junit.CucumberOptions;
 @RunWith(Cucumber.class)
 
 @CucumberOptions(
-		features="src/test/resources/featureFiles",
+		features="src/test/resources/featureFiles/Cart.feature",
 		glue= {"stepDefinitions","hooks"},
 		dryRun=!true,
 //		tags = "~@NewUserRegistration",

@@ -7,9 +7,10 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
+import basetTest.ElementUtils;
 import driverManager.DriverManager;
 
-public class ProductsPage {
+public class ProductsPage extends ElementUtils{
 	WebDriver driver = DriverManager.getDriver();
 	private static ProductsPage productsPageInstance;
 
@@ -39,36 +40,36 @@ public class ProductsPage {
 	By menTshirtvailability = By.xpath("(//div[@class='product-information']//p)[2]");
 	By menTshirtCondition = By.xpath("(//div[@class='product-information']//b)[2]");
 	By menTshirtBrand = By.xpath("(//div[@class='product-information']//b)[3]");
-    By searchedProductsHeader = By.xpath("//h2[normalize-space(text())='Searched Products']");
-    By cottonTshirt = By.xpath("//div[@class='productinfo text-center']/p");
-    By GreenSideTshirt = By.xpath("//div[@class='productinfo text-center']/p");
-    By blueTopsProduct = By.xpath("//a[@data-product-id='1']");
-    By blueTopsAddToCart = By.xpath("(//div[@class='overlay-content']/a)[1]");
-    By ContinueShoppingButton = By.xpath("//button[@class='btn btn-success close-modal btn-block']");
-    
-    public void clickContinueButton() {
+	By searchedProductsHeader = By.xpath("//h2[normalize-space(text())='Searched Products']");
+	By cottonTshirt = By.xpath("//div[@class='productinfo text-center']/p");
+	By GreenSideTshirt = By.xpath("//div[@class='productinfo text-center']/p");
+	By blueTopsProduct = By.xpath("//a[@data-product-id='1']");
+	By blueTopsAddToCart = By.xpath("(//a[@class='btn btn-default add-to-cart'])[1]");
+	By ContinueShoppingButton = By.xpath("//button[@class='btn btn-success close-modal btn-block']");
+
+	public void clickContinueButton() {
 		driver.findElement(ContinueShoppingButton).click();
 
 	}
-    
-    public void addBlueTopsToCart() {
+
+	public void addBlueTopsToCart() {
 		WebElement blueTops= driver.findElement(blueTopsProduct);
 		Actions a = new Actions(driver);
 		a.moveToElement(blueTops).build().perform();
-		driver.findElement(blueTopsAddToCart).click();
-		
+		ElementUtils.clickOnElement(blueTopsAddToCart, 5);
+
 	}
-    
-    
-    public boolean verifyGreenSideTshirt() {
+
+
+	public boolean verifyGreenSideTshirt() {
 		return driver.findElement(GreenSideTshirt).isDisplayed();
 
 	}
-    public boolean verifyCottonTshirt() {
+	public boolean verifyCottonTshirt() {
 		return driver.findElement(cottonTshirt).isDisplayed();
 
 	}
-    public boolean verfiySearchResultsHeader() {
+	public boolean verfiySearchResultsHeader() {
 		return driver.findElement(searchedProductsHeader).isDisplayed();
 
 	}
@@ -77,9 +78,9 @@ public class ProductsPage {
 	public WebElement getSearchBox() {
 		return driver.findElement(searchBox);
 	}
-	
+
 	public void clickSearchButon() {
-		 driver.findElement(searchButton).click();;
+		driver.findElement(searchButton).click();;
 
 	}
 	public void clickOnmenTshirtView() {
