@@ -13,19 +13,17 @@ import org.openqa.selenium.support.PageFactory;
 
 import constants.Cons;
 import driverManager.DriverManager;
-import pages.CartPage;
-import pages.ContactUsPage;
 import pages.HomePage;
-import pages.ProductsPage;
-import pages.SignUpPage;
-import pages.TestCasesPage;
+import pages.LoginPage;
+import pages.MyAccountPage;
+import pages.SearchResultsPage;
 
 public class CommonUtils {
 
 	public static void loadProperties() {
 		FileReader file = null;
 		try {
-			file = new FileReader("src/test/resources/Config.properties");
+			file = new FileReader("src/test/resources/config.properties");
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -40,16 +38,16 @@ public class CommonUtils {
 
 		Cons.BrowserName = p.getProperty("Browser");
 		Cons.Url = p.getProperty("Url");
+		Cons.Email = p.getProperty("Email");
+		Cons.Password = p.getProperty("Password");
 
 	}
 	
 	public static void initWebElement() {
 		PageFactory.initElements(DriverManager.getDriver(), HomePage.getInstance());
-		PageFactory.initElements(DriverManager.getDriver(), SignUpPage.getInstance());
-		PageFactory.initElements(DriverManager.getDriver(), CartPage.getInstance());
-		PageFactory.initElements(DriverManager.getDriver(), ProductsPage.getInstance());
-		PageFactory.initElements(DriverManager.getDriver(), TestCasesPage.getInstance());
-		PageFactory.initElements(DriverManager.getDriver(), ContactUsPage.getInstance());
+		PageFactory.initElements(DriverManager.getDriver(), MyAccountPage.getInstance());
+		PageFactory.initElements(DriverManager.getDriver(), LoginPage.getInstance());
+		PageFactory.initElements(DriverManager.getDriver(), SearchResultsPage.getInstance());
 
 	}
 	

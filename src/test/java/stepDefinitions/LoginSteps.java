@@ -2,62 +2,59 @@ package stepDefinitions;
 
 import org.junit.Assert;
 
-import driverManager.DriverManager;
-import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import pages.HomePage;
-import pages.SignUpPage;
+import pages.LoginPage;
+import pages.MyAccountPage;
 
 public class LoginSteps {
-	@Given("User launches the application")
-	public void user_launches_the_application() {
-		String currentUrl = DriverManager.getDriver().getCurrentUrl();
-		System.out.println(currentUrl);
-
-	}
-
-	@Given("the user enters the valid credentials {string} and {string}")
-	public void the_user_enters_the_valid_credentials_and(String email, String password) {
-		
-		SignUpPage.getInstance().enterLoginEmail().sendKeys(email);
-		SignUpPage.getInstance().enterPassword().sendKeys(password);
-
-	}
-	@And("User clicks on the signup header link")
-	public void user_clicks_on_the_signup_header_link() {
-		HomePage.getInstance().getSignUpHeader().click();
-	}
-
-
-	@When("the user clicks on the login button")
-	public void the_user_clicks_on_the_login_button() {
-		SignUpPage.getInstance().clickLoginButton();
-
-	}
-
-	@Then("the user should able to see the logout account link")
-	public void the_user_should_able_to_see_the_logout_account_link_() {
-		boolean verifyDeleteAccLink = HomePage.getInstance().verifyLogoutAccLink();
-		Assert.assertEquals(true, verifyDeleteAccLink);
-		HomePage.getInstance().clickLogoutLink();
+	boolean targetPage ;
 	
-
+	@Given("User navigates to login page")
+	public void user_navigates_to_login_page() {
+		
+		HomePage.getInstance().clickMyAccount();
+		HomePage.getInstance().clickLogin();
+	    
 	}
-
-	@Given("the user enters the invalid credentials {string} and {string}")
-	public void the_user_enters_the_invalid_credentials_and(String email, String password) {
-         
-		SignUpPage.getInstance().enterLoginEmail().sendKeys(email);
-		SignUpPage.getInstance().enterPassword().sendKeys(password);
+	@When("User enters valid email address {string} into email field")
+	public void user_enters_valid_email_address_into_email_field(String email) {
+	   LoginPage.getInstance().setEmail(email);
 	}
-
-	@Then("the user should able to see invalid login error message")
-	public void the_user_should_able_to_see_invalid_login_error_message() {
-		String loginErrorMessage = SignUpPage.getInstance().getLoginErrorMessage();
-		Assert.assertEquals("Your email or password is incorrect!", loginErrorMessage);
-
+	@When("User enters valid password {string} into password field")
+	public void user_enters_valid_password_into_password_field(String password) {
+		 LoginPage.getInstance().setPassword(password);
+	}
+	@When("User clicks on Login button")
+	public void user_clicks_on_login_button() {
+		LoginPage.getInstance().clickLogin();
+	}
+	@Then("User should get successfully logged in")
+	public void user_should_get_successfully_logged_in() {
+	    targetPage = MyAccountPage.getInstance().isMyAccountPageExists();
+	    Assert.assertTrue(targetPage);
+	}
+	@Then("User should not get successfully logged in")
+	public void user_should_not_get_successfully_logged_in() {
+		boolean incorrectLoginMessage = LoginPage.getInstance().isIncorrectLoginMessageDisplayed();
+		
+		if (incorrectLoginMessage==true) {
+			Assert.assertTrue(incorrectLoginMessage);
+			
+			if (targetPage == true) {
+				Assert.assertTrue(targetPage);
+			}
+		}else {
+			Assert.fail("Testcase is failed");
+		}
+	}
+	@Then("User should logout")
+	public void user_should_logout() {
+		HomePage.getInstance().clickMyAccount();
+	    MyAccountPage.getInstance().clickLogout();
+	    
 	}
 
 }

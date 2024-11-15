@@ -1,99 +1,18 @@
 package pages;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.FindBy;
 
 import driverManager.DriverManager;
 
-public class HomePage {
+public class HomePage extends BasePage {
+
 	WebDriver driver = DriverManager.getDriver();
 	private static HomePage homePageInstance;
 
 	public HomePage() {
-
-	}
-
-	By homePageLogo = By.xpath("//div[@class='logo pull-left']//img[1]");
-	By homePageLink = By.xpath("//a[normalize-space(text())='Home']");
-	By signUpHeader = By.xpath("//a[@href='/login']");
-	By productsHeader = By.xpath("//a[@href='/products']");
-	By cartHeader = By.xpath("//a[@href='/view_cart']");
-	By contactUsLink = By.xpath("//a[@href='/contact_us']");
-	By deleteAccountLink= By.xpath("//a[@href='/delete_account']");
-	By logoutLink = By.xpath("//a[@href='/logout']");
-	By testCasesHeaderLink = By.xpath("//a[@href='/test_cases']");
-	By productsLink = By.xpath("//a[@href='/products']");
-
-	By subscriptionHeader = By.xpath("//div[@class='single-widget']//h2[1]");
-	By subscriptionTextBox = By.xpath("//input[@type='email']");
-	By subscriptionSuccessMessage = By.xpath("//div[@class='alert-success alert']");
-	
-	By cartHeaderLink = By.xpath("(//a[@href='/view_cart'])[1]");
-    
-	public void clickCartHeader() {
-		driver.findElement(cartHeaderLink).click();
-
-	}
-
-	public boolean verifySubscriptionHeader() {
-		WebElement element = driver.findElement(subscriptionHeader);
-		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("arguments[0].scrollIntoView(true);", element);
-		return driver.findElement(subscriptionHeader).isDisplayed();
-
-	}
-
-	public WebElement enterEmailInSubsTxtBox() {
-		return driver.findElement(subscriptionTextBox);
-
-	}
-	
-	public WebElement getSubscriptionSuccessMessage(){
-		return driver.findElement(subscriptionSuccessMessage);
-	}
-
-	public void clickDeleteAcc() {
-		driver.findElement(deleteAccountLink).click();
-	}
-
-	public boolean verifyLogoutAccLink() {
-		return driver.findElement(logoutLink).isDisplayed();
-
-	}
-
-	public WebElement getHomePageLogo() {
-		return driver.findElement(homePageLogo);
-
-	}
-	public WebElement getSignUpHeader() {
-		return driver.findElement(signUpHeader);
-
-	}
-
-	public void clickLogoutLink() {
-		driver.findElement(logoutLink).click();
-	}
-
-
-
-	public WebElement getHomePageLink() {
-		return driver.findElement(homePageLink);
-	}
-
-	public void clickContactusLink() {
-		driver.findElement(contactUsLink).click();
-
-	}
-
-	public void clickOnTestCases() {
-		driver.findElement(testCasesHeaderLink).click();
-
-	}
-
-	public void clickonProductsLink() {
-		driver.findElement(productsLink).click();
 
 	}
 
@@ -106,7 +25,107 @@ public class HomePage {
 		return homePageInstance;
 	}
 
+	@FindBy(xpath = "//span[normalize-space()='My Account']")
+	WebElement lnkMyaccount;
 
+	@FindBy(xpath = "//a[normalize-space()='Register']")
+	WebElement lnkRegister;
 
+	@FindBy(linkText = "Login") // Login link added in step0
+	WebElement linkLogin;
+
+	@FindBy(xpath = "//input[@name='search']")
+	WebElement searchBar;
+
+	@FindBy(xpath = "//i[@class='fa fa-search']")
+	WebElement searchButton;
+
+	@FindBy(xpath = "//a[@href='http://localhost/opencart/upload/index.php?route=common/home']")
+	WebElement homeButton;
+
+	@FindBy(xpath = "((//div[@class='button-group']//button)[2]")
+	WebElement wishListTT;
+
+	@FindBy(xpath = "((//div[@class='button-group']//button)[3]")
+	WebElement compareTT;
+
+	@FindBy(xpath = "(//i[@class='fa fa-shopping-cart']/following-sibling::span)[1]")
+	WebElement shoppingcartHeaderLink;
+
+	@FindBy(xpath = "//a[@href='http://localhost/opencart/upload/index.php?route=information/sitemap']")
+	WebElement sitemapFooterLink;
+
+	public void clickMyAccount() {
+
+		jSClick(lnkMyaccount);
+
+	}
+
+	public void clickRegister() {
+
+		jSClick(lnkRegister);
+
+	}
+
+	public void clickLogin() {
+
+		jSClick(linkLogin);
+
+	}
+
+	public void enterProductName(String productname) {
+		searchBar.sendKeys(productname);
+
+	}
+
+	public void clickSearchButton() {
+
+		jSClick(searchButton);
+
+	}
+
+	public void clearSearchBar() {
+		searchBar.clear();
+
+	}
+
+	public void enterInvalidProductName(String productname) {
+		waitForVisibilityOfElement(searchBar, 0);
+		searchBar.sendKeys(productname);
+
+	}
+
+	public void clickHomeBtn() {
+
+		waitForElement(homeButton, 0).click();
+		;
+
+	}
+
+	public String getAddtoWishListToolTip() {
+		Actions a = new Actions(driver);
+		a.moveToElement(wishListTT);
+		return wishListTT.getAttribute("data-original-title");
+
+	}
+
+	public String getCompareProductToolTip() {
+		Actions a = new Actions(driver);
+		a.moveToElement(compareTT);
+		return compareTT.getAttribute("data-original-title");
+
+	}
+
+	public void clickshoppingcartHeaderLink() {
+
+		jSClick(shoppingcartHeaderLink);
+
+	}
+
+	public void clicksitemapFooterLink() {
+
+		jSClick(sitemapFooterLink);
+
+	}
 
 }

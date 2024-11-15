@@ -1,56 +1,70 @@
 package pages;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 
-import driverManager.DriverManager;
-
-public class CartPage {
-	WebDriver driver = DriverManager.getDriver();
-	private static CartPage cartPageInstance;
-
-	public CartPage() {
-
-	}
+public class CartPage extends BasePage {
 
 	
+
+	public CartPage(WebDriver driver) {
+		super(driver);
+		// TODO Auto-generated constructor stub
+	}
+
+	@FindBy(xpath = "(//a[@href='http://localhost/opencart/upload/index.php?route=checkout/cart'])[3]")
+	WebElement shoppingSubHeaderMenu;
+
+	@FindBy(xpath = "(//a[@href='http://localhost/opencart/upload/index.php?route=product/product&product_id=41'])[4]")
+	WebElement shoppingCartProductname;
+
+	@FindBy(xpath = "(//a[@href='http://localhost/opencart/upload/index.php?route=product/product&product_id=41'])[3]")
+	WebElement shoppingCartProductImage;
+
+	@FindBy(xpath = "(//span[@class='input-group-btn']/button)[3]")
+	WebElement removeBtn;
+
+	@FindBy(xpath = "//div[@class='pull-left']/a")
+	WebElement continueShoppingBtn;
+
+	@FindBy(xpath = "//a[@class='btn btn-primary']")
+	WebElement checkoutBtn;
+
+	public boolean isShoppingSubHeaderMenuDisplayed() {
+		return shoppingSubHeaderMenu.isDisplayed();
+
+	}
+
+	public boolean isShoppingCartProductImageDisplayed() {
+		return shoppingCartProductImage.isDisplayed();
+
+	}
+
+	public String getShoppingCartProductname() {
+		return shoppingCartProductname.getText();
+	}
+
+	public void clickRemoveBtn() {
+		
+			jSClick(removeBtn);
 	
-	By shoppingCartHeader = By.xpath("//li[normalize-space(text())='Shopping Cart']");
-    By checkOutBtn = By.xpath("//div[@class='col-sm-6']//a[1]");
-    By checkoutHeader = By.className("active");
-    By addressHeader = By.xpath("(//h2[@class='heading'])[1]");
-    By reviewOrderHeader = By.xpath("(//h2[@class='heading'])[2]");
-    By totalAmount = By.xpath("(//p[@class='cart_total_price'])[2]");
-    By textArea = By.xpath("//div[@class='form-group']//textarea[1]");
-    By placeOrderbtn = By.xpath("//a[@href='/payment']");
-    
-    public boolean verfiyShoppingCartHeader() {
-    	return driver.findElement(shoppingCartHeader).isDisplayed();
-    }
-    
-    public void clickCheckoutBtn() {
-		driver.findElement(checkOutBtn).click();
+		
 
 	}
-    public boolean verfiyCheckoutHeader() {
-    	return driver.findElement(checkoutHeader).isDisplayed();
 
+	public void clickcontinueShoppingBtn() {
+		
+			jSClick(continueShoppingBtn);
+	
+		
 	}
-    public boolean verfiyaddressHeader() {
-    	return driver.findElement(addressHeader).isDisplayed();
 
+	public void clickcheckoutBtn() {
+		
+			jSClick(checkoutBtn);
+			
+		
 	}
-    
-    public String getTotalAmount() {
-		String text = driver.findElement(totalAmount).getText();
-		return text;
-	}
-    public static CartPage getInstance() {
-		if (cartPageInstance == null) {
-			cartPageInstance = new CartPage();
 
-		}
-
-		return cartPageInstance;
-	}
 }

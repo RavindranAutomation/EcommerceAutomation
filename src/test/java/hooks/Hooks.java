@@ -2,6 +2,7 @@ package hooks;
 
 import java.time.Duration;
 
+import org.apache.commons.lang3.RandomStringUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 
@@ -47,5 +48,21 @@ public class Hooks {
 	@AfterAll
 	public static void tearDown() {
 		DriverManager.getDriver().quit();
+	}
+	
+	public String randomeString() {
+		String generatedstring = RandomStringUtils.randomAlphabetic(5);
+		return generatedstring;
+	}
+
+	public String randomeNumber() {
+		String generatednumber = RandomStringUtils.randomNumeric(10);
+		return generatednumber;
+	}
+
+	public String randomeAlphaNumberic() {
+		String generatedstring = RandomStringUtils.randomAlphabetic(3);
+		String generatednumber = RandomStringUtils.randomNumeric(3);
+		return (generatedstring + "@" + generatednumber);
 	}
 }

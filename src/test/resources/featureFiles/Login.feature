@@ -1,17 +1,17 @@
+Feature: Login functionality
 
-@Login
-Feature: Login Feature
+  Background: 
+    Given User navigates to login page
 
-  Scenario: Verify the login functionality with valid credentials
-    Given the user launches the browser and navigate to the URL
-    And User clicks on the signup header link
-    When the user enters the valid credentials "raviqa123@yopmail.com" and "Test@12345"
-    And the user clicks on the login button
-    Then the user should able to see the logout account link
-
-  Scenario: Verify the login functionality with invalid credentials
-    Given the user launches the browser and navigate to the URL
-    And User clicks on the signup header link
-    When the user enters the invalid credentials "raviqa123@hotmail.com" and "@Test2w"
-    And the user clicks on the login button
-    Then the user should able to see invalid login error message
+  Scenario: Login with valid credentials
+    When User enters valid email address "ravindrann10898@gmail.com" into email field
+    And User enters valid password "Test@12345" into password field
+    And User clicks on Login button
+    Then User should get successfully logged in
+    And User should logout
+    
+  Scenario: Login with invalid credentials
+    When User enters valid email address "ravinrdrann898@gmail.com" into email field
+    And User enters valid password "Test@12345" into password field
+    And User clicks on Login button
+    Then User should not get successfully logged in
